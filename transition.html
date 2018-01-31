@@ -21,6 +21,7 @@
 
 		function changeImage(theImage) {
 			activeImg.src = theImage.src;
+			addCaption(this);
 		}
 		function initialize() {
 			activeImg = document.getElementById("active_img");
@@ -72,6 +73,7 @@
 
 	<h6>
 		<img src="images/Ash.png" id="active_img" ; width="550" height="500" ; />
+		<div id = "caption"></div>
 	</h6>
 
 	<div>
