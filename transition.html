@@ -8,8 +8,14 @@
 			text-align: center;
 		}
 	</style>
+    <script src = "dragondata.js"></script>
 	<script>
-
+        function Dragon(name,bio,imgSrc){
+            this.name = name;
+            this.bio = bio;
+            this.imgSrc = imgSrc;
+        }
+        
 		function toggleCaps(toggleParagraph) {
 			if (toggleParagraph.innerHTML.indexOf("E") >= 0) {
 				toggleParagraph.innerHTML = toggleParagraph.innerHTML.toLowerCase();
@@ -18,15 +24,36 @@
 				toggleParagraph.innerHTML = toggleParagraph.innerHTML.toUpperCase();
 			}
 		}
-
-		function changeImage(theImage) {
-			activeImg.src = theImage.src;
-			addCaption(this);
-		}
-		function initialize() {
+		
+        function changeDragon(dragon){
+            activeImg.src = dragon.imgSrc;
+            document.getElementById("dragon_bio").innerHTML = dragon.bio;
+            document.getElementById("dragon_name").innerHTML = dragon.name;
+        }
+        
+        function infoAssign(){
+            for(index = 0; index < nameList.length; index++;){
+                Rax = new D
+            }
+        }
+        function initialize() {
+            nameList = dragons.split(";");
+            bioList = dragoninfo.split(";");
 			activeImg = document.getElementById("active_img");
+            
+            Rax = new Dragon(nameList[0],bioList[0],"images/Rax.png");
+            
+            Ash = new Dragon(nameList[1],bioList[1],"images/Ash.png");
+            
+            Barnabas = new Dragon(nameList[2],bioList[2],"images/Barnabas.png");
+            
+            Drake = new Dragon(nameList[3],bioList[3],"images/Drake.png");
+            
+            Endisun = new Dragon(nameList[4],bioList[4],"images/Endisun.png");
+            
+            Lunar = new Dragon(nameList[5],bioList[5],"images/Lunar.png");
+            
 		}
-
 	</script>
 </head>
 
@@ -73,16 +100,17 @@
 
 	<h6>
 		<img src="images/Ash.png" id="active_img" ; width="550" height="500" ; />
-		<div id = "caption"></div>
+        <div id = "dragon_name">Rax</div>
+		<div id = "dragon_bio">Rax</div>
 	</h6>
 
 	<div>
-		<img src="images/Ash.png" onclick="changeImage(this);" width="200" height="150" ; />
-		<img src="images/Barnabas.png" onclick="changeImage(this);" width="200" height="150" ; />
-		<img src="images/Drake.png" onclick="changeImage(this);" width="200" height="150" ; />
-		<img src="images/Endisun.png" onclick="changeImage(this);" width="200" height="150" ; />
-		<img src="images/Lunar.png" onclick="changeImage(this);" width="200" height="150" ; />
-		<img src="images/Rax.png" onclick="changeImage(this);" width="200" height="150" ; />
+		<img class = "thumb" src="images/Ash.png" onclick="changeDragon(Ash);" width="200" height="150" ; />
+		<img class = "thumb" src="images/Barnabas.png" onclick="changeDragon(Barnabas);" width="200" height="150" ; />
+		<img class = "thumb" src="images/Drake.png" onclick="changeDragon(Drake);" width="200" height="150" ; />
+		<img class = "thumb" src="images/Endisun.png" onclick="changeDragon(Endisun);" width="200" height="150" ; />
+		<img class = "thumb" src="images/Lunar.png" onclick="changeDragon(Lunar);" width="200" height="150" ; />
+		<img class = "thumb" src="images/Rax.png" onclick="changeDragon(Rax);" width="200" height="150" ; />
 	</div>
 </body>
 
